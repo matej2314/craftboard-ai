@@ -1,0 +1,24 @@
+services:
+    ai-manager:
+        build:
+            context: ./ai-manager
+            dockerfile: Dockerfile
+        ports:
+            - 3000:3000
+        environment:
+            - NODE_ENV=development
+            - PORT=3000
+        volumes:
+            - ./ai-manager:/app
+        working_dir: /app
+    frontend:
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
+        ports:
+            - 3001:3001
+        environment:
+            - NODE_ENV=development
+            - PORT=3001
+        volumes:
+            - ./frontend:/app
