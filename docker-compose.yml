@@ -3,22 +3,32 @@ services:
         build:
             context: ./ai-manager
             dockerfile: Dockerfile
+        networks:
+            - craftboard_network
+        restart: always
         ports:
             - 3000:3000
         environment:
             - NODE_ENV=development
             - PORT=3000
         volumes:
-            - ./ai-manager:/app
-        working_dir: /app
+            - root/main/craftboard/ai-manager/.env:/app/.env
     frontend:
         build:
             context: ./frontend
             dockerfile: Dockerfile
+        networks:
+            - craftboard_network
+        restart: always
         ports:
             - 3001:3001
         environment:
             - NODE_ENV=development
             - PORT=3001
         volumes:
-            - ./frontend:/app
+            - root/main/craftboard/frontend/.env:/app/.env
+
+networks:
+    craftboard_network:
+        external: true
+        name: craftboard_network
