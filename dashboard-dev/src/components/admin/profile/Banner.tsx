@@ -36,19 +36,19 @@ const Banner = () => {
           <h4 className="text-2xl font-bold text-navy-700 dark:text-white">
             17
           </h4>
-          <p className="text-sm font-normal text-gray-600">Posts</p>
+          <p className="text-sm font-normal text-gray-600">Finished projects</p>
         </div>
         <div className="flex flex-col items-center justify-center">
           <h4 className="text-2xl font-bold text-navy-700 dark:text-white">
-            9.7K
+            15
           </h4>
-          <p className="text-sm font-normal text-gray-600">Followers</p>
+          <p className="text-sm font-normal text-gray-600">Clients</p>
         </div>
         <div className="flex flex-col items-center justify-center">
           <h4 className="text-2xl font-bold text-navy-700 dark:text-white">
-            434
+            $17,000
           </h4>
-          <p className="text-sm font-normal text-gray-600">Following</p>
+          <p className="text-sm font-normal text-gray-600">Earnings</p>
         </div>
       </div>
     </Card>

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import Dropdown from 'components/dropdown';
 import { AiOutlineUser } from 'react-icons/ai';
 import { BsThreeDots } from 'react-icons/bs';
@@ -9,19 +9,25 @@ import { BsThreeDotsVertical } from 'react-icons/bs';
 
 function CardMenu(props: { transparent?: boolean; vertical?: boolean }) {
   const { transparent, vertical } = props;
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [mode, setMode] = useState<'projects' | 'clients'>('projects');
+
+  const handleModeChange = (mode: 'projects' | 'clients') => {
+    setMode(mode);
+    setOpen(false);
+  };
+
   return (
     <Dropdown
       button={
         <button
           onClick={() => setOpen(!open)}
-          className={`flex items-center text-xl hover:cursor-pointer ${
-            transparent
+          className={`flex items-center text-xl hover:cursor-pointer ${transparent
               ? 'bg-none text-white hover:bg-none active:bg-none'
               : vertical
-              ? 'bg-none text-navy-700 dark:text-white'
-              : 'bg-lightPrimary p-2 text-brand-500 hover:bg-gray-100 dark:bg-navy-700 dark:text-white dark:hover:bg-white/20 dark:active:bg-white/10'
-          } linear justify-center rounded-lg font-bold transition duration-200`}
+                ? 'bg-none text-navy-700 dark:text-white'
+                : 'bg-lightPrimary p-2 text-brand-500 hover:bg-gray-100 dark:bg-navy-700 dark:text-white dark:hover:bg-white/20 dark:active:bg-white/10'
+            } linear justify-center rounded-lg font-bold transition duration-200`}
         >
           {vertical ? (
             <p className="text-[24px] hover:cursor-pointer">
@@ -40,25 +46,25 @@ function CardMenu(props: { transparent?: boolean; vertical?: boolean }) {
           <span>
             <AiOutlineUser />
           </span>
-          Panel 1
+          Client 1
         </p>
         <p className="hover:text-black mt-2 flex cursor-pointer items-center gap-2 pt-1 text-gray-600 hover:font-medium">
           <span>
             <AiOutlineShop />
           </span>
-          Panel 2
+          Client 2
         </p>
         <p className="hover:text-black mt-2 flex cursor-pointer items-center gap-2 pt-1 text-gray-600 hover:font-medium">
           <span>
             <TiLightbulb />
           </span>
-          Panel 3
+          Client 3
         </p>
         <p className="hover:text-black mt-2 flex cursor-pointer items-center gap-2 pt-1 text-gray-600 hover:font-medium">
           <span>
             <FiSettings />
           </span>
-          Panel 4
+          Client 4
         </p>
       </div>
     </Dropdown>

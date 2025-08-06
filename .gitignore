@@ -4,3 +4,6 @@ dashboard-dev/dist
 dashboard-dev/build
 dashboard-dev/.npmrc
 dashboard-dev/.vscode
+dashboard-dev/.next
+dashboard-dev/CHANGELOG.md
+dashboard-dev/LICENSE

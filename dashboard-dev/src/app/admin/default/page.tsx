@@ -23,8 +23,13 @@ const Dashboard = () => {
       <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-6">
         <Widget
           icon={<MdBarChart className="h-7 w-7" />}
-          title={'Earnings'}
-          subtitle={'$340.5'}
+          title={'Total Earnings'}
+          subtitle={'$50000'}
+        />
+        <Widget
+          icon={<MdBarChart className="h-7 w-7" />}
+          title={'This month earnings'}
+          subtitle={'$1200'}
         />
         <Widget
           icon={<IoDocuments className="h-6 w-6" />}
@@ -33,18 +38,13 @@ const Dashboard = () => {
         />
         <Widget
           icon={<MdBarChart className="h-7 w-7" />}
-          title={'Sales'}
-          subtitle={'$574.34'}
+          title={'Total clients'}
+          subtitle={'100'}
         />
         <Widget
           icon={<MdDashboard className="h-6 w-6" />}
-          title={'Your Balance'}
-          subtitle={'$1,000'}
-        />
-        <Widget
-          icon={<MdBarChart className="h-7 w-7" />}
-          title={'New Tasks'}
-          subtitle={'145'}
+          title={'This month clients'}
+          subtitle={'10'}
         />
         <Widget
           icon={<IoMdHome className="h-6 w-6" />}
@@ -82,7 +82,7 @@ const Dashboard = () => {
         {/* Task chart & Calendar */}
 
         <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
-          <TaskCard />
+          <TaskCard cardTitle="Last tasks" />
           <div className="grid grid-cols-1 rounded-[20px]">
             <MiniCalendar />
           </div>
