@@ -3,3 +3,4 @@ dashboard-dev/node_modules
 dashboard-dev/dist
 dashboard-dev/build
 dashboard-dev/.npmrc
+dashboard-dev/.vscode
