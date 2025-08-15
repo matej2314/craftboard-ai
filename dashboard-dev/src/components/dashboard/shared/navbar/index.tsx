@@ -1,12 +1,13 @@
+'use client';
+
 import { Fragment, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Dropdown from 'components/dashboard/shared/dropdown';
 import { FiAlignJustify } from 'react-icons/fi';
 import NavLink from 'components/dashboard/shared/link/NavLink';
-import navbarimage from '/public/img/layout/Navbar.png';
 import { BsArrowBarUp } from 'react-icons/bs';
 import { FiSearch } from 'react-icons/fi';
-import avatar from '/public/img/avatars/avatar4.png';
+import avatar from '/public/img/avatars/avatar8.png';
 import Image from 'next/image';
 import { getBreadcrumbs } from 'utils/navigation';
 import {

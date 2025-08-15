@@ -3,7 +3,6 @@ import Banner from 'components/dashboard/shared/profile/Banner';
 import General from 'components/dashboard/shared/profile/General';
 // import Notification from 'components/admin/profile/Notification';
 import Project from 'components/dashboard/shared/profile/Project';
-// import Storage from 'components/admin/profile/Storage';
 // import Upload from 'components/admin/profile/Upload';
 
 const ProfileOverview = () => {

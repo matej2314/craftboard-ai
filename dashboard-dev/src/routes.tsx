@@ -9,6 +9,8 @@ import {
   MdAssistant,
   MdSettings,
   MdTask,
+  MdPanTool,
+  MdTextFormat,
 } from 'react-icons/md';
 
 //base routes (auth)
@@ -48,18 +50,6 @@ const getProfessionRoutes = (profession: Proffesion) => {
       path: 'settings',
       icon: <MdSettings className="h-6 w-6" />,
     },
-    {
-      name: 'Clients',
-      layout: `/dashboard/${profession}`,
-      path: 'clients',
-      icon: <MdPerson className="h-6 w-6" />,
-    },
-    {
-      name: 'Tasks',
-      layout: `/dashboard/${profession}`,
-      path: 'tasks',
-      icon: <MdTask className="h-6 w-6" />,
-    },
   ];
 
   const professionSpecificRoutes = {
@@ -68,7 +58,25 @@ const getProfessionRoutes = (profession: Proffesion) => {
         name: 'Content projects',
         layout: `/dashboard/${profession}`,
         path: 'projects/content-projects',
-        icon: <MdEdit className="h-6 w-6" />,
+        icon: <MdTextFormat className="h-6 w-6" />,
+      },
+      {
+        name: 'Tools',
+        layout: `/dashboard/${profession}`,
+        path: 'tools',
+        icon: <MdPanTool className="h-6 w-6" />,
+      },
+      {
+        name: 'Tasks',
+        layout: `/dashboard/${profession}`,
+        path: 'tasks',
+        icon: <MdTask className="h-6 w-6" />,
+      },
+      {
+        name: 'Clients',
+        layout: `/dashboard/${profession}`,
+        path: 'clients',
+        icon: <MdPerson className="h-6 w-6" />,
       },
     ],
     programmer: [
@@ -77,6 +85,24 @@ const getProfessionRoutes = (profession: Proffesion) => {
         layout: `/dashboard/${profession}`,
         path: 'projects/code-projects',
         icon: <MdCode className="h-6 w-6" />,
+      },
+      {
+        name: 'Tools',
+        layout: `/dashboard/${profession}`,
+        path: 'tools',
+        icon: <MdPanTool className="h-6 w-6" />,
+      },
+      {
+        name: 'Tasks',
+        layout: `/dashboard/${profession}`,
+        path: 'tasks',
+        icon: <MdTask className="h-6 w-6" />,
+      },
+      {
+        name: 'Clients',
+        layout: `/dashboard/${profession}`,
+        path: 'clients',
+        icon: <MdPerson className="h-6 w-6" />,
       },
     ],
   };
