@@ -1,64 +1,91 @@
 import React from 'react';
-
-// Admin Imports
-
-// Icon Imports
+import { type Proffesion } from './types/new-types';
 import {
   MdHome,
-  MdOutlineShoppingCart,
-  MdBarChart,
   MdPerson,
-  MdLock,
+  MdEdit,
+  // MdAnalytics,
+  MdCode,
+  MdAssistant,
+  MdSettings,
+  MdTask,
 } from 'react-icons/md';
 
-const routes = [
-  {
-    name: 'Main Dashboard',
-    layout: '/admin',
-    path: 'default',
-    icon: <MdHome className="h-6 w-6" />,
-  },
-  {
-    name: 'Profile',
-    layout: '/admin',
-    path: 'profile',
-    icon: <MdPerson className="h-6 w-6" />,
-  },
-  {
-    name: 'Projects',
-    layout: '/admin',
-    path: 'projects',
-    icon: <MdOutlineShoppingCart className="h-6 w-6" />,
-  },
-  {
-    name: 'Tasks',
-    layout: '/admin',
-    path: 'tasks',
-    icon: <MdOutlineShoppingCart className="h-6 w-6" />,
-  },
-  {
-    name: 'Billings',
-    layout: '/admin',
-    path: 'billings',
-    icon: <MdOutlineShoppingCart className="h-6 w-6" />,
-  },
-  {
-    name: 'AI-Assistant',
-    layout: '/admin',
-    path: 'ai-assistant',
-    icon: <MdOutlineShoppingCart className="h-6 w-6" />,
-  },
-  {
-    name: 'Settings',
-    layout: '/admin',
-    path: 'settings',
-    icon: <MdOutlineShoppingCart className="h-6 w-6" />,
-  },
+//base routes (auth)
+const loginRoutes = [
   {
     name: 'Sign In',
-    layout: '/auth',
-    path: 'sign-in',
-    icon: <MdLock className="h-6 w-6" />,
+    layout: '/dashboard',
+    path: '',
+    icon: <MdHome className="h-6 w-6" />,
   },
 ];
+
+//proffesion specific routes
+const getProfessionRoutes = (profession: Proffesion) => {
+  const baseRoutes = [
+    {
+      name: 'Dashboard',
+      layout: `/dashboard/${profession}`,
+      path: '',
+      icon: <MdHome className="h-6 w-6" />,
+    },
+    {
+      name: 'Profile',
+      layout: `/dashboard/${profession}`,
+      path: 'profile',
+      icon: <MdPerson className="h-6 w-6" />,
+    },
+    {
+      name: 'Assistant',
+      layout: `/dashboard/${profession}`,
+      path: 'ai-assistant',
+      icon: <MdAssistant className="h-6 w-6" />,
+    },
+    {
+      name: 'Settings',
+      layout: `/dashboard/${profession}`,
+      path: 'settings',
+      icon: <MdSettings className="h-6 w-6" />,
+    },
+    {
+      name: 'Clients',
+      layout: `/dashboard/${profession}`,
+      path: 'clients',
+      icon: <MdPerson className="h-6 w-6" />,
+    },
+    {
+      name: 'Tasks',
+      layout: `/dashboard/${profession}`,
+      path: 'tasks',
+      icon: <MdTask className="h-6 w-6" />,
+    },
+  ];
+
+  const professionSpecificRoutes = {
+    copywriter: [
+      {
+        name: 'Content projects',
+        layout: `/dashboard/${profession}`,
+        path: 'projects/content-projects',
+        icon: <MdEdit className="h-6 w-6" />,
+      },
+    ],
+    programmer: [
+      {
+        name: 'Code projects',
+        layout: `/dashboard/${profession}`,
+        path: 'projects/code-projects',
+        icon: <MdCode className="h-6 w-6" />,
+      },
+    ],
+  };
+
+  return [...baseRoutes, ...professionSpecificRoutes[profession]];
+};
+
+const routes = loginRoutes;
+
+export { getProfessionRoutes };
+
 export default routes;

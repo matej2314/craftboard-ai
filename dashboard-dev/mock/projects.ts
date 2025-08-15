@@ -1,5 +1,3 @@
-import { UUID } from 'crypto';
-
 export type Project = {
   id: string;
   name: string;
