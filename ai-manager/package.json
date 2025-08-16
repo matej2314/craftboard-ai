@@ -1,7 +1,20 @@
 {
-  "dependencies": {
-    "@types/express": "^5.0.3",
-    "express": "^5.1.0",
-    "jose": "^6.0.12"
-  }
+	"name": "ai-manager",
+	"version": "1.0.0",
+	"description": "AI Manager",
+	"main": "dist/server.js",
+	"scripts": {
+		"dev": "ts-node-dev --respawn src/server.ts",
+		"build": "tsc",
+		"start": "node dist/server.js"
+	},
+	"dependencies": {
+		"@types/express": "^5.0.3",
+		"express": "^5.1.0",
+		"jose": "^6.0.12",
+		"ts-node-dev": "^2.0.0"
+	},
+	"devDependencies": {
+		"typescript": "^5.9.2"
+	}
 }

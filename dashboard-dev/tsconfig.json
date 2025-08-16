@@ -1,8 +1,16 @@
 {
   "compilerOptions": {
-    "typeRoots": ["node_modules/@types", "src/types"],
-    "target": "es2016",
-    "lib": ["dom", "dom.iterable", "esnext", "es2015.iterable"],
+    "typeRoots": [
+      "node_modules/@types",
+      "src/types"
+    ],
+    "target": "es2020",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext",
+      "es2015.iterable"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -21,7 +29,9 @@
     "downlevelIteration": true,
     "baseUrl": "src",
     "paths": {
-      "@/public/*": ["./src/assets/public/*"]
+      "@/public/*": [
+        "./src/assets/public/*"
+      ]
     },
     "incremental": true,
     "plugins": [
@@ -31,7 +41,9 @@
     ],
     "strict": false
   },
-  "exclude": ["node_modules"],
+  "exclude": [
+    "node_modules"
+  ],
   "include": [
     "./src",
     "next-env.d.ts",
