@@ -7,3 +7,5 @@ dashboard-dev/.vscode
 dashboard-dev/.next
 dashboard-dev/CHANGELOG.md
 dashboard-dev/LICENSE
+keys/private.pem
+keys/public.pem

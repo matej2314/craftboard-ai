@@ -1,6 +1,11 @@
 'use client';
 
 import { useState, useRef, useEffect, type KeyboardEvent } from 'react';
+import {
+  programmerQuickCommands,
+  copywriterQuickCommands,
+} from 'lib/assistQuickCommands';
+
 import Card from 'components/dashboard/shared/card/index';
 
 interface Message {
@@ -205,13 +210,23 @@ export default function AiManagerPage() {
 
           {/* Input */}
           <div className="border-t border-gray-200 p-4 dark:border-white/10">
+            <div className="mb-2 flex gap-2">
+              {programmerQuickCommands.map((command) => (
+                <button
+                  key={command.id}
+                  className="rounded-2xl bg-gray-200 p-2 text-sm hover:bg-gray-300"
+                >
+                  {command.name}
+                </button>
+              ))}
+            </div>
             <div className="flex items-end gap-3">
               <div className="flex-1">
                 <textarea
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Napisz wiadomość..."
+                  placeholder="Write a message..."
                   className="w-full resize-none rounded-xl border border-gray-200 bg-white/0 p-3 text-sm outline-none placeholder:text-gray-500 focus:border-blue-500 dark:border-white/10 dark:bg-navy-800 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-400"
                   rows={1}
                   style={{ minHeight: '44px', maxHeight: '120px' }}
@@ -239,9 +254,7 @@ export default function AiManagerPage() {
             </div>
 
             <div className="mt-2 flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
-              <span>
-                Naciśnij Enter aby wysłać, Shift+Enter dla nowej linii
-              </span>
+              <span>Press Enter to send, Shift+Enter for new line</span>
               <span>{inputValue.length}/1000</span>
             </div>
           </div>
