@@ -1,7 +1,14 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+	// rewrites: async () => {
+	// 	return [
+	// 		{
+	// 			source: '/dashboard/:path*',
+	// 			destination: 'http://localhost:3001/dashboard/:path*',
+	// 		},
+	// 	];
+	// },
 };
 
 export default nextConfig;
